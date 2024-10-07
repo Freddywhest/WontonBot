@@ -15,7 +15,7 @@ async function ST() {
       return module.exports;
     }
   } catch (error) {
-    logger.error("Error While calling ST: ", error);
+    console.log(error);
     return null;
   }
 }
@@ -34,7 +34,7 @@ async function GP() {
       return module.exports;
     }
   } catch (error) {
-    logger.error("Error While calling GP: ", error);
+    console.log(error);
     return null;
   }
 }
