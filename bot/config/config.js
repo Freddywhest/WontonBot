@@ -36,6 +36,11 @@ const settings = {
       ? JSON.parse(process.env.DELAY_BETWEEN_GAME)
       : [15, 20],
 
+  RANDOM_GAME_POINTS:
+    process.env.RANDOM_GAME_POINTS && _isArray(process.env.RANDOM_GAME_POINTS)
+      ? JSON.parse(process.env.RANDOM_GAME_POINTS)
+      : [500, 1000],
+
   DELAY_BETWEEN_STARTING_BOT:
     process.env.DELAY_BETWEEN_STARTING_BOT &&
     _isArray(process.env.DELAY_BETWEEN_STARTING_BOT)

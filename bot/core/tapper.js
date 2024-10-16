@@ -461,7 +461,8 @@ class Tapper {
               this.bot_name,
               logger,
               settings.DELAY_BETWEEN_GAME,
-              app
+              app,
+              settings.RANDOM_GAME_POINTS
             );
             await gp.play();
           }
