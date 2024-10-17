@@ -1,6 +1,6 @@
 {
-  "name": "notpixel",
-  "version": "1.0.0",
+  "name": "wonton",
+  "version": "1.0.3",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
