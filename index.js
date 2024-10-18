@@ -1,5 +1,8 @@
 const logger = require("./bot/utils/logger");
 const luncher = require("./bot/utils/luncher");
+const { version, name } = require("./package.json");
+const _ = require("lodash");
+const axios = require("axios");
 
 const main = async () => {
   const nodeVersion = process.version;
@@ -19,6 +22,15 @@ const main = async () => {
 // Wrap main function execution in an async context to handle asynchronous operations
 (async () => {
   try {
+    const latestVersion = await axios.get(
+      "https://raw.githubusercontent.com/Freddywhest/WontonBot/refs/heads/main/package.json"
+    );
+    if (!_.isEqual(latestVersion.data.version, version)) {
+      logger.versionWarning(
+        `You are using version <bl>${version}</bl> of the ${name} bot, while the latest version is <lb>${latestVersion.data.version}</lb>. Please update the bot.\n\n`
+      );
+      process.exit(1);
+    }
     await main();
   } catch (error) {
     throw error;
